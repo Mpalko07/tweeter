@@ -35,7 +35,7 @@ nav span {
 main {
   width: 90%; /* Set width to 90% of its parent element */
   margin: 0 auto; /* Center align the main element */
-  background-color: #ffffff; /* Set background color to match body */
+  background-color: inherit; /* Set background color to match body */
   padding: 20px; /* Add some padding for better spacing */
 }
 
