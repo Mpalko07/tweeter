@@ -1,0 +1,22 @@
+header {
+  height: calc(100vh - 120px); /* Calculate the height of the visible portion (viewport height - navbar height) */
+  width: 100%; /* Make the header 100% the width of its parent container */
+  background-color: #874355;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children in a column */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+header img {
+  width: 250px; /* Adjust avatar image size */
+  height: 250px; /* Adjust avatar image size */
+  border-radius: 50%; /* Make the avatar image round */
+}
+
+header h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #fff;
+}
