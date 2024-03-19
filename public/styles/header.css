@@ -1,5 +1,5 @@
 header {
-  height: calc(100vh - 120px); /* Calculate the height of the visible portion (viewport height - navbar height) */
+  height: 600px;
   width: 100%; /* Make the header 100% the width of its parent container */
   background-color: #874355;
   background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");

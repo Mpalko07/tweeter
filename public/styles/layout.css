@@ -32,6 +32,22 @@ nav span {
   font-family: 'Bungee', sans-serif; /* Apply Bungee font to Tweeter logo */
 }
 
+main {
+  width: 90%; /* Set width to 90% of its parent element */
+  margin: 0 auto; /* Center align the main element */
+  background-color: #ffffff; /* Set background color to match body */
+  padding: 20px; /* Add some padding for better spacing */
+}
+
+main h1 {
+  color: #000000; /* Set color for headings */
+}
+
+main p {
+  color: #000000;
+}
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
