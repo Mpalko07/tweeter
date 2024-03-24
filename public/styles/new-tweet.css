@@ -1,0 +1,24 @@
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-tweet label {
+  border-bottom: 1px solid #000; /* Add black border line under the label text */
+}
+
+.new-tweet textarea {
+  margin-bottom: 10px; /* Add some space between textarea and button */
+}
+
+.new-tweet button {
+  background-color: #4056A1; /* Set tweet button color to match the nav */
+  color: #fff; /* Set text color to white */
+  font-family: 'Bungee', sans-serif; /* Set font family to Bungee */
+  align-self: flex-start; /* Align button to the left */
+}
+
+.new-tweet output {
+  font-family: 'Bungee', sans-serif; /* Set font family to Bungee */
+  align-self: flex-end; /* Right align the counter text */
+}

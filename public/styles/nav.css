@@ -13,9 +13,10 @@ nav {
   align-items: center;
 }
 
-nav span {
+nav span.tweeter {
   font-size: 20px;
   font-family: 'Bungee', sans-serif;
+  margin-left: auto;
 }
 
 .tweeter {
