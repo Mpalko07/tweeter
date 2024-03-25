@@ -18,7 +18,10 @@
   align-self: flex-start; /* Align button to the left */
 }
 
-.new-tweet output {
+.counter {
   font-family: 'Bungee', sans-serif; /* Set font family to Bungee */
-  align-self: flex-end; /* Right align the counter text */
+  position: absolute; /* Position the counter absolutely */
+  top: 10; /* Align to the top */
+  right: 0; /* Align to the right */
+  text-align: right; /* Align the text to the right */
 }
