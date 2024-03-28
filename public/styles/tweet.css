@@ -1,0 +1,45 @@
+.tweet {
+  background-color: #f5f5f5; 
+  border: 2px solid black;
+  padding: 20px; 
+  margin-top: 20px;
+  margin-bottom: 20px; 
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.name-handle {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly, pushing them to opposite ends */
+  align-items: center; /* Align items vertically */
+}
+
+.name-handle h3 {
+  margin-right: auto; /* Push h3 to the left as much as possible */
+}
+
+.name-handle span {
+  margin-left: auto; /* Push span to the right as much as possible */
+}
+
+.tweet-content {
+  margin-bottom: 10px;
+}
+
+.tweet-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tweet-actions i {
+  margin-left: 10px; 
+}
+
+.timestamp {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
