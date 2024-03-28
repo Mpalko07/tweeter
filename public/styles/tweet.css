@@ -45,10 +45,13 @@
 }
 
 .tweet:hover {
-  background-color: #f0f0f0;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 5px black;
 }
 
 .tweet-actions i:hover {
-  color: rgb(0, 255, 55);
+  color: #874355; 
+}
+
+.profile-info i:hover {
+  color: #874355; 
 }
