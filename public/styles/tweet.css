@@ -13,12 +13,12 @@
 
 .name-handle {
   display: flex;
-  justify-content: space-between; /* Distribute items evenly, pushing them to opposite ends */
-  align-items: center; /* Align items vertically */
+  justify-content: space-between; 
+  align-items: center;
 }
 
 .name-handle h3 {
-  margin-right: auto; /* Push h3 to the left as much as possible */
+  margin-right: auto; 
 }
 
 .name-handle span {
@@ -42,4 +42,13 @@
   font-size: 16px;
   color: black;
   font-weight: bold;
+}
+
+.tweet:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 10px black;
+}
+
+.tweet-actions i:hover {
+  color: rgb(0, 255, 55);
 }
