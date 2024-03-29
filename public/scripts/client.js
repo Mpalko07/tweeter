@@ -4,63 +4,72 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense, donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
+$(document).ready(function() {
+  // Event listener for form submission
+  $('form').submit(function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    
+    // Serialize the form data
+    const formData = $(this).serialize();
+    
+    // Send the POST request to the server
+    $.post('/tweets', formData)
+      .done(function() {
+        // If the request is successful, fetch the updated list of tweets and render them
+        loadTweets();
+      })
+      .fail(function(error) {
+        console.error('Error submitting tweet:', error);
+      });
+  });
 
-const renderTweets = function(tweets) {
-  // loops through tweets
-  for (const tweet of tweets) {
-    // calls createTweetElement for each tweet
-    const $tweet = createTweetElement(tweet);
-    // takes return value and prepends it to the tweets container
-    $('#tweets-container').prepend($tweet);
+  // Function to fetch and render tweets
+  function loadTweets() {
+    $.get('/tweets')
+      .done(function(tweets) {
+        renderTweets(tweets);
+      })
+      .fail(function(error) {
+        console.error('Error fetching tweets:', error);
+      });
   }
-};
 
-const createTweetElement = function(tweet) {
-  let $tweet = $(`
-    <article class="tweet">
-      <header>
-        <div class="profile-info">
-          <img src="${tweet.user.avatars}" alt="User Avatar">
-          <h3>${tweet.user.name}</h3>
-          <span>${tweet.user.handle}</span>
+  // Function to render tweets
+  function renderTweets(tweets) {
+    const $tweetsContainer = $('.tweets-container');
+    $tweetsContainer.empty(); // Clear existing tweets
+    
+    // Loop through the tweets and append them to the container
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $tweetsContainer.append($tweet);
+    }
+  }
+
+  // Function to create a tweet element
+  function createTweetElement(tweet) {
+    // Create the tweet HTML structure
+    const $tweet = $(`
+      <article class="tweet">
+        <header>
+          <div class="profile-info">
+            <img src="${tweet.user.avatars}" alt="User Avatar">
+            <h3>${tweet.user.name}</h3>
+            <span>${tweet.user.handle}</span>
+          </div>
+        </header>
+        <div class="tweet-content">
+          <p>${tweet.content.text}</p>
         </div>
-      </header>
-      <div class="tweet-content">
-        <p>${tweet.content.text}</p>
-      </div>
-      <footer>
-        <span class="timestamp">${tweet.created_at}</span>
-      </footer>
-    </article>
-  `);
+        <footer>
+          <span class="timestamp">${tweet.created_at}</span>
+        </footer>
+      </article>
+    `);
+    
+    return $tweet;
+  }
 
-  return $tweet;
-};
-
-// Call the renderTweets function with the data array
-renderTweets(data);
+  // Load tweets when the page loads
+  loadTweets();
+});
