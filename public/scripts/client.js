@@ -89,10 +89,10 @@ $(document).ready(function() {
           </div>
         </header>
         <div class="tweet-content">
-          <p>${tweet.content.text}</p>
+        <p>${$("<div>").text(tweet.content.text).html()}</p>
         </div>
         <footer>
-        <span class="timestamp">${tweet.created_at}</span>
+          <span class="timestamp">${tweet.created_at}</span>
         </footer>
       </article>
     `);
