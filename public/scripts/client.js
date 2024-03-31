@@ -48,6 +48,11 @@ $(document).ready(function() {
       const $tweet = createTweetElement(tweet);
       $tweetsContainer.prepend($tweet);
     }
+    // Update time stamp using timeago library
+    $('span.timestamp').each(function() {
+      const timestamp = $(this).text();
+      $(this).text(timeago.format(timestamp));
+    });
   }
 
   // Function to create a tweet element
@@ -66,7 +71,7 @@ $(document).ready(function() {
           <p>${tweet.content.text}</p>
         </div>
         <footer>
-        <span class="timestamp">${new Date(tweet.created_at).toLocaleString()}</span>
+        <span class="timestamp">${tweet.created_at}</span>
         </footer>
       </article>
     `);
