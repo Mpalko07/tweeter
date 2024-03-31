@@ -8,6 +8,9 @@ $(document).ready(function() {
   // Event listener for form submission
   $('form').submit(function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
+
+    // Hide the error message element if it's currently visible
+    $('.error-message').slideUp();
     
     // Get tweet text from the form
     const tweetText = $('#tweet-text').val().trim();

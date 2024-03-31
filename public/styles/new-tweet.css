@@ -25,3 +25,11 @@
   right: 0; /* Align to the right */
   text-align: right; /* Align the text to the right */
 }
+
+.error-message {
+  display: none; /* Initially hide the error message */
+  color: red;
+  padding: 5px;
+  border: 1px solid red;
+  margin-top: 5px;
+}
