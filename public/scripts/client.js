@@ -25,13 +25,17 @@ $(document).ready(function() {
 
   // Function to fetch and render tweets
   function loadTweets() {
-    $.get('/tweets')
-      .done(function(tweets) {
-        renderTweets(tweets);
-      })
-      .fail(function(error) {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: function(tweets) {
+        renderTweets(tweets); // Call renderTweets to display the fetched tweets
+      },
+      error: function(xhr, status, error) {
         console.error('Error fetching tweets:', error);
-      });
+      }
+    });
   }
 
   // Function to render tweets
@@ -39,10 +43,10 @@ $(document).ready(function() {
     const $tweetsContainer = $('.tweets-container');
     $tweetsContainer.empty(); // Clear existing tweets
     
-    // Loop through the tweets and append them to the container
+    // Loop through the tweets and prepend them to the container
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $tweetsContainer.append($tweet);
+      $tweetsContainer.prepend($tweet);
     }
   }
 
@@ -62,7 +66,7 @@ $(document).ready(function() {
           <p>${tweet.content.text}</p>
         </div>
         <footer>
-          <span class="timestamp">${tweet.created_at}</span>
+        <span class="timestamp">${new Date(tweet.created_at).toLocaleString()}</span>
         </footer>
       </article>
     `);
