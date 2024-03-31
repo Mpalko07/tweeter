@@ -38,14 +38,14 @@ $(document).ready(function() {
     // Function to validate tweet text
     function isTweetValid(tweetText) {
       if (!tweetText) {
-        alert('Error: Tweet cannot be empty.');
+        $('.error-message').text('Error: Tweet cannot be empty.').slideDown();
         return false;
       } else if (tweetText.length > 140) {
-        alert('Error: Tweet cannot exceed 140 characters.');
+        $('.error-message').text('Error: Tweet cannot exceed 140 characters.').slideDown();
         return false;
       }
       return true; // Tweet is valid
-    }
+  };
 
   // Function to fetch and render tweets
   function loadTweets() {
