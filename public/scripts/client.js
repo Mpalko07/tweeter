@@ -83,22 +83,25 @@ $(document).ready(function() {
   function createTweetElement(tweet) {
     // Create the tweet HTML structure
     const $tweet = $(`
-      <article class="tweet">
-        <header>
-          <div class="profile-info">
-            <img src="${tweet.user.avatars}" alt="User Avatar">
-            <h3>${tweet.user.name}</h3>
-            <span>${tweet.user.handle}</span>
-          </div>
-        </header>
-        <div class="tweet-content">
+    <article class="tweet">
+      <div class="profile-info">
+        <img src="${tweet.user.avatars}" alt="User Avatar">
+        <h3>${tweet.user.name}</h3>
+        <span>${tweet.user.handle}</span>
+      </div>
+      <div class="tweet-content">
         <p>${$("<div>").text(tweet.content.text).html()}</p>
-        </div>
-        <footer>
-          <span class="timestamp">${tweet.created_at}</span>
-        </footer>
-      </article>
-    `);
+        <hr> 
+      </div>
+      <footer>
+        <span class="timestamp">${tweet.created_at}</span>
+        <div class="tweet-actions">
+          <i class="far fa-heart"></i> <!-- Heart icon for like -->
+          <i class="fas fa-retweet"></i> <!-- Retweet icon -->
+      </div>
+      </footer>
+    </article>
+  `);
     
     return $tweet;
   }
