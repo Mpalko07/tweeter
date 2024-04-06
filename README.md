@@ -19,4 +19,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Time to Tweet
 
-!["Welcome to Tweeter"]()
+!["Welcome to Tweeter"](docs/Welcome to Tweeter.png)
+!["New tweet"](docs/New Tweet.png)
