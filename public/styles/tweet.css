@@ -9,27 +9,13 @@
 .profile-info {
   display: flex;
   align-items: center;
-  width: 1000%;
+  justify-content: space-between;
 }
 
 .profile-info img {
   width: 40px; 
   height: 40px; 
   margin-right: 10px; 
-}
-
-.name-handle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.name-handle h3 {
-  margin-right: 10px;
-}
-
-.name-handle span {
-  margin-left: auto;
 }
 
 .tweet-content {

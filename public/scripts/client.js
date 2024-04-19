@@ -88,8 +88,10 @@ $(document).ready(function() {
     const $tweet = $(`
     <article class="tweet">
       <div class="profile-info">
-        <img src="${tweet.user.avatars}" alt="User Avatar">
-        <h3>${tweet.user.name}</h3>
+      <div>
+        <img src="${tweet.user.avatars}" alt="User Avatar"> 
+        <span>${tweet.user.name}</span>
+      </div> 
         <span>${tweet.user.handle}</span>
       </div>
       <div class="tweet-content">
