@@ -9,6 +9,7 @@
 .profile-info {
   display: flex;
   align-items: center;
+  width: 1000%;
 }
 
 .profile-info img {

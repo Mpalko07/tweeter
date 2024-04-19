@@ -29,6 +29,9 @@ $(document).ready(function() {
       .done(function() {
         // If the request is successful, fetch the updated list of tweets and render them
         loadTweets();
+        // Reset character counter to 140
+        $('#tweet-text').val(''); // Clear tweet text
+        $('.counter').text(140); // Reset counter value
       })
       .fail(function(error) {
         console.error('Error submitting tweet:', error);
@@ -96,8 +99,9 @@ $(document).ready(function() {
       <footer>
         <span class="timestamp">${tweet.created_at}</span>
         <div class="tweet-actions">
-          <i class="far fa-heart"></i> <!-- Heart icon for like -->
+          <i class="far fa-flag"></i> <!-- Flag icon -->
           <i class="fas fa-retweet"></i> <!-- Retweet icon -->
+          <i class="far fa-heart"></i> <!-- Heart icon for like -->
       </div>
       </footer>
     </article>
