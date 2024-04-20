@@ -20,5 +20,4 @@ This repository is the starter code for the project: Students will fork and clon
 ## Time to Tweet
 
 !["Welcome to Tweeter"](https://github.com/Mpalko07/tweeter/blob/3a6739ea59d3cb243e02a809534051ca8d0d792a/docs/Welcome%20to%20Tweeter.png)
-!["New tweet"](png)
-!["New tweet"](https://github.com/Mpalko07/tweeter/blob/3a6739ea59d3cb243e02a809534051ca8d0d792a/docs/New%20Tweet.png)
+!["New tweet"](https://github.com/Mpalko07/tweeter/blob/master/docs/New%20Tweet.png)
